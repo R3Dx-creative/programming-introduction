@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3-3.処理の保存(関数、サブルーチン) · GitBook</title>
+        <title>1-1.コンピュータの歴史 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="4.おわりに.html" />
+    <link rel="next" href="2.計算・変数.html" />
     
     
-    <link rel="prev" href="3-2.繰り返し.html" />
+    <link rel="prev" href="1.はじめに.html" />
     
 
     </head>
@@ -135,7 +135,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="1-1.コンピュータの歴史.html">
+        <li class="chapter active" data-level="1.2.1" data-path="1-1.コンピュータの歴史.html">
             
                 <a href="1-1.コンピュータの歴史.html">
             
@@ -277,7 +277,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.3" data-path="3-3.処理の保存.html">
+        <li class="chapter " data-level="1.4.3" data-path="3-3.処理の保存.html">
             
                 <a href="3-3.処理の保存.html">
             
@@ -370,7 +370,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >3-3.処理の保存(関数、サブルーチン)</a>
+        <a href="." >1-1.コンピュータの歴史</a>
     </h1>
 </div>
 
@@ -385,26 +385,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x95A2;&#x6570;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;">&#x95A2;&#x6570;&#x3001;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</h1>
-<p>&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x3067;&#x306F;&#x51E6;&#x7406;&#x306B;&#x3059;&#x3089;&#x540D;&#x524D;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x308C;&#x3082;&#x809D;&#x3067;&#x3059;&#x3002;</p>
-<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus_katekin_power</span><span class="hljs-params">(x)</span></span>
-  x + <span class="hljs-number">7586</span>
-<span class="hljs-keyword">end</span>
-</code></pre>
-<p><code>def</code>&#x3068;&#x306F;<code>define</code>&#x306E;&#x7565;&#x3067;&#x300C;&#x5B9A;&#x7FA9;&#x300D;&#x3092;&#x610F;&#x5473;&#x3057;&#x307E;&#x3059;&#x3002;&#x51E6;&#x7406;&#x306B;&#x540D;&#x524D;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x3053;&#x3068;&#x306F;&#x300C;&#x51E6;&#x7406;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x300D;&#x3068;&#x3082;&#x89E3;&#x91C8;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x540D;&#x524D;&#x306E;&#x4ED8;&#x3044;&#x305F;&#x51E6;&#x7406;&#x3092;<strong>&#x95A2;&#x6570;</strong>&#x3084;<strong>&#x30B5;&#x30D6;&#x30EB;&#x30FC;&#x30C1;&#x30F3;</strong>&#x3068;&#x3044;&#x3063;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;&#x3002;&#x95A2;&#x6570;&#x306F;&#x6570;&#x5B66;&#x3063;&#x307D;&#x3044;&#x306E;&#x3067;&#x3001;Ruby&#x3092;&#x542B;&#x3081;&#x305F;&#x3044;&#x304F;&#x3064;&#x304B;&#x8A00;&#x8A9E;&#x3067;&#x306F;<strong>&#x30E1;&#x30BD;&#x30C3;&#x30C9;</strong>&#x3068;&#x547C;&#x3070;&#x308C;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x3053;&#x3067;&#x306F;&#x95A2;&#x6570;&#x3068;&#x547C;&#x3070;&#x305B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<p>&#x3057;&#x3070;&#x3057;&#x3070;&#x95A2;&#x6570;&#x306F;&#x4F55;&#x304B;&#x3057;&#x3089;&#x306E;&#x5024;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x307E;&#x3059;&#x3002;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;&#x5024;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x51E6;&#x7406;&#x306B;&#x30D0;&#x30EA;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x751F;&#x307E;&#x308C;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x4E0A;&#x306E;&#x95A2;&#x6570;<code>plus_katekin_power</code>&#x3067;&#x306F;&#x3001;&#x5024;&#x3092;&#x4E00;&#x3064;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x3001;&#x305D;&#x308C;&#x304C;<code>x</code>&#x306B;&#x4EE3;&#x5165;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;x&#x306E;&#x3088;&#x3046;&#x306A;&#x3001;&#x5024;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;&#x5909;&#x6570;&#x3092; <strong>&#x5F15;&#x6570;(&#x3072;&#x304D;&#x3059;&#x3046;)</strong> &#x3068;&#x3044;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x95A2;&#x6570;&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;<strong>&#x547C;&#x3073;&#x51FA;&#x3059;</strong>&#x3068;&#x3001;&#x5B57;&#x4E0B;&#x3052;&#x306E;&#x3068;&#x3053;&#x308D;&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x305D;&#x3057;&#x3066;&#x3001;&#x6700;&#x5F8C;&#x306E;&#x51E6;&#x7406;&#x7D50;&#x679C;&#x304C;<strong>&#x8FD4;&#x3055;&#x308C;&#x307E;&#x3059;</strong>&#x3002;&#x8FD4;&#x3055;&#x308C;&#x308B;&#x5024;&#x306F;<strong>&#x623B;&#x308A;&#x5024;</strong>&#x3068;&#x3044;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plus_katekin_power</span><span class="hljs-params">(x)</span></span>
-  x + <span class="hljs-number">7586</span>
-<span class="hljs-keyword">end</span>
-
-brite = <span class="hljs-number">717</span>
-power = plus_katekin_power(brite) <span class="hljs-comment"># &#x95A2;&#x6570;&#x306E;&#x300C;&#x547C;&#x3073;&#x51FA;&#x3057;&#x300D;</span>
-puts power
-</code></pre>
+                                <h1 id="&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x306E;&#x6B74;&#x53F2;">&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x306E;&#x6B74;&#x53F2;</h1>
+<h2 id="1-&#x6570;&#x5024;&#x8A08;&#x7B97;">1. &#x6570;&#x5024;&#x8A08;&#x7B97;</h2>
+<p>&#x3082;&#x3068;&#x3082;&#x3068;&#x306F;&#x9AD8;&#x901F;&#x306A;&#x8A08;&#x7B97;&#x3092;&#x3059;&#x308B;&#x76EE;&#x7684;&#x304C;&#x5927;&#x304D;&#x304B;&#x3063;&#x305F;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x2193;&#x6614;&#x306E;&#x30AF;&#x30BD;&#x3067;&#x304B;&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x3002;&#x30E1;&#x30E2;&#x30EA;&#x306F;&#x308F;&#x305A;&#x304B;&#x3002;</p>
+<ul>
+<li><p>Colossus(&#x30B3;&#x30ED;&#x30C3;&#x30B5;&#x30B9;) - &#x6697;&#x53F7;&#x89E3;&#x8AAD;. 1944&#x5E74;
+<img src="images/Colossus.jpg"></p>
+</li>
+<li><p>ENIAC(&#x30A8;&#x30CB;&#x30A2;&#x30C3;&#x30AF;) - &#x5F3E;&#x9053;&#x8A08;&#x7B97;&#x30FB;&#x5FAE;&#x5206;&#x65B9;&#x7A0B;&#x5F0F;. 1946&#x5E74;
+<img src="images/Eniac.jpg"></p>
+</li>
+<li><p>EDVAC(&#x30A8;&#x30C9;&#x30D0;&#x30C3;&#x30AF;) - ENIAC&#x306E;&#x9032;&#x5316;&#x7248;&#x3002;&#x5F3E;&#x9053;&#x8A08;&#x7B97;&#x30FB;&#x5FAE;&#x5206;&#x65B9;&#x7A0B;&#x5F0F;. 1951&#x5E74;
+<img src="images/800px-Edvac.jpg"></p>
+</li>
+</ul>
+<h2 id="2-&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x4FDD;&#x5B58;">2. &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x4FDD;&#x5B58;</h2>
+<p>&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x306B;&#x6B20;&#x304B;&#x305B;&#x306A;&#x3044;&#x306E;&#x306F;&#x3001;&#x4E00;&#x6642;&#x7684;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x300C;<strong>&#x30E1;&#x30E2;&#x30EA;</strong>&#x300D;&#x3068;&#x3044;&#x3046;&#x6982;&#x5FF5;&#x3067;&#x3059;&#x3002;&#x4E00;&#x6642;&#x7684;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x52B9;&#x7387;&#x7684;&#x306A;&#x8A08;&#x7B97;&#x304C;&#x3067;&#x304D;&#x308B;&#x304B;&#x3089;&#x3067;&#x3059;&#x3002;&#x4E0A;&#x306B;&#x3042;&#x3052;&#x305F;&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x3082;&#x308F;&#x305A;&#x304B;&#x306A;&#x304C;&#x3089;&#x30E1;&#x30E2;&#x30EA;&#x3068;&#x8A00;&#x3048;&#x308B;&#x4ED5;&#x7D44;&#x307F;&#x304C;&#x3042;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<h2 id="3-&#x6570;&#x4EE5;&#x5916;&#x3082;&#x6271;&#x3046;">3. &#x6570;&#x4EE5;&#x5916;&#x3082;&#x6271;&#x3046;</h2>
+<p>&#x6614;&#x306E;&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x306F;&#x8A08;&#x7B97;&#x304C;&#x30E1;&#x30A4;&#x30F3;&#x3067;&#x3057;&#x305F;&#x304C;&#x3001;&#x5229;&#x4FBF;&#x6027;&#x3092;&#x9AD8;&#x3081;&#x308B;&#x305F;&#x3081;&#x3001;&#x6587;&#x5B57;&#x3001;&#x8272;&#x306A;&#x3069;&#x306E;&#x6570;&#x5024;&#x4EE5;&#x5916;&#x3082;&#x30C7;&#x30FC;&#x30BF;&#x5316;&#x3057;&#x3001;&#x6271;&#x3048;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<hr>
+<p>&#x7B2C;2&#x7AE0;&#x3067;&#x306F;&#x3001;&#x5358;&#x7D14;&#x306A;&#x8A08;&#x7B97;&#x3001;&#x30E1;&#x30E2;&#x30EA;&#x3078;&#x306E;&#x4E00;&#x6642;&#x4FDD;&#x5B58;&#x3001;&#x6570;&#x5024;&#x4EE5;&#x5916;&#x306E;&#x6271;&#x3044;&#x3092;&#x4F53;&#x9A13;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x7B2C;3&#x7AE0;&#x3067;&#x306F;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x30B3;&#x30F3;&#x30D4;&#x30E5;&#x30FC;&#x30BF;&#x306E;&#x9AD8;&#x901F;&#x306A;&#x8A08;&#x7B97;&#x3092;&#x652F;&#x3048;&#x305F;&#x4ED5;&#x7D44;&#x307F;&#x3067;&#x3042;&#x308B;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x306E;&#x809D;(&#x6761;&#x4EF6;&#x3001;&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x3001;&#x30B5;&#x30D6;&#x30EB;&#x30FC;&#x30C1;&#x30F3;)&#x3092;&#x4F53;&#x9A13;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 
                                 
                                 </section>
@@ -432,12 +434,12 @@ puts power
 
             
                 
-                <a href="3-2.繰り返し.html" class="navigation navigation-prev " aria-label="Previous page: 3-2.繰り返し(for)">
+                <a href="1.はじめに.html" class="navigation navigation-prev " aria-label="Previous page: 第1章.はじめに">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="4.おわりに.html" class="navigation navigation-next " aria-label="Next page: 第4章.おわりに">
+                <a href="2.計算・変数.html" class="navigation navigation-next " aria-label="Next page: 第2章.計算・変数">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -448,7 +450,7 @@ puts power
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3-3.処理の保存(関数、サブルーチン)","level":"1.4.3","depth":2,"next":{"title":"第4章.おわりに","level":"1.5","depth":1,"path":"4.おわりに.md","ref":"4.おわりに.md","articles":[{"title":"4-1.勉強","level":"1.5.1","depth":2,"path":"4-1.勉強.md","ref":"4-1.勉強.md","articles":[]},{"title":"4-2.課題","level":"1.5.2","depth":2,"path":"4-2.課題.md","ref":"4-2.課題.md","articles":[]}]},"previous":{"title":"3-2.繰り返し(for)","level":"1.4.2","depth":2,"path":"3-2.繰り返し.md","ref":"3-2.繰り返し.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"3-3.処理の保存.md","mtime":"2021-05-14T02:20:17.919Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-14T08:08:31.404Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1-1.コンピュータの歴史","level":"1.2.1","depth":2,"next":{"title":"第2章.計算・変数","level":"1.3","depth":1,"path":"2.計算・変数.md","ref":"2.計算・変数.md","articles":[{"title":"2-0.開発ツール","level":"1.3.1","depth":2,"path":"2-0.開発ツール.md","ref":"2-0.開発ツール.md","articles":[]},{"title":"2-1.動作確認","level":"1.3.2","depth":2,"path":"2-1.動作確認.md","ref":"2-1.動作確認.md","articles":[]},{"title":"2-2.数の計算","level":"1.3.3","depth":2,"path":"2-2.数の計算.md","ref":"2-2.数の計算.md","articles":[]},{"title":"2-3.値の保存(変数)","level":"1.3.4","depth":2,"path":"2-3.値の保存.md","ref":"2-3.値の保存.md","articles":[]},{"title":"2-4.数以外の値(文字列、真偽値)","level":"1.3.5","depth":2,"path":"2-4.数以外の値.md","ref":"2-4.数以外の値.md","articles":[]}]},"previous":{"title":"第1章.はじめに","level":"1.2","depth":1,"path":"1.はじめに.md","ref":"1.はじめに.md","articles":[{"title":"1-1.コンピュータの歴史","level":"1.2.1","depth":2,"path":"1-1.コンピュータの歴史.md","ref":"1-1.コンピュータの歴史.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"1-1.コンピュータの歴史.md","mtime":"2021-05-14T08:08:17.426Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-14T08:08:31.404Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
