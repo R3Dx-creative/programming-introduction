@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2-3.値の保存(変数) · GitBook</title>
+        <title>5-1.バージョン管理 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-4.数以外の値.html" />
+    <link rel="next" href="5-1-1.Gitの紹介.html" />
     
     
-    <link rel="prev" href="2-2.数の計算.html" />
+    <link rel="prev" href="5.システム開発.html" />
     
 
     </head>
@@ -206,7 +206,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.4" data-path="2-3.値の保存.html">
+        <li class="chapter " data-level="1.3.4" data-path="2-3.値の保存.html">
             
                 <a href="2-3.値の保存.html">
             
@@ -367,7 +367,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="5-1.バージョン管理.html">
+        <li class="chapter active" data-level="1.6.1" data-path="5-1.バージョン管理.html">
             
                 <a href="5-1.バージョン管理.html">
             
@@ -492,7 +492,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >2-3.値の保存(変数)</a>
+        <a href="." >5-1.バージョン管理</a>
     </h1>
 </div>
 
@@ -507,34 +507,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5024;&#x306E;&#x4FDD;&#x5B58;">&#x5024;&#x306E;&#x4FDD;&#x5B58;</h1>
-<h2 id="&#x540D;&#x4ED8;&#x3051;&#x308B;">&#x540D;&#x4ED8;&#x3051;&#x308B;</h2>
-<p>&#x8A08;&#x7B97;&#x7D50;&#x679C;&#x3092;&#x4E00;&#x6642;&#x7684;&#x306B;&#x4FDD;&#x5B58;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-ruby">katekin = <span class="hljs-number">7000</span> + <span class="hljs-number">586</span>
-brite = <span class="hljs-number">700</span> + <span class="hljs-number">17</span>
-
-puts katekin
-puts brite
-
-x = katekin + brite
-puts x
-</code></pre>
-<p><code>7000 + 586</code>&#x3068;&#x3044;&#x3046;&#x8A08;&#x7B97;&#x7D50;&#x679C;&#x306F;<code>katekin</code>&#x3068;<strong>&#x540D;&#x4ED8;&#x3051;</strong>&#x307E;&#x3057;&#x305F;&#x3002;</p>
-<p>&#x307E;&#x305F;&#x3001;<code>700 + 17</code>&#x3068;&#x3044;&#x3046;&#x8A08;&#x7B97;&#x7D50;&#x679C;&#x306F;<code>brite</code>&#x3068;<strong>&#x540D;&#x4ED8;&#x3051;</strong>&#x307E;&#x3057;&#x305F;&#x3002;</p>
-<p><code>=</code>&#x3068;&#x3044;&#x3046;&#x306E;&#x306F;&#x30A4;&#x30B3;&#x30FC;&#x30EB;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x3067;&#x306F;&#x306A;&#x3044;&#x3067;&#x3059;&#x3002;&#x6700;&#x521D;&#x306F;&#x7D1B;&#x3089;&#x308F;&#x3057;&#x3044;&#x3067;&#x3059;&#x304C;<code>&#x2190;</code>&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x3060;&#x3068;&#x601D;&#x3046;&#x3068;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3057;&#x3084;&#x3059;&#x3044;&#x3067;&#x3059;&#x3002;</p>
-<p><code>katekin &#x2190; 7000 + 586</code></p>
-<p>&#x3053;&#x3046;&#x3044;&#x3046;&#x3075;&#x3046;&#x306B;<strong>&#x540D;&#x4ED8;&#x3051;&#x308B;</strong>&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;&#x30C7;&#x30FC;&#x30BF;&#x3092;<strong>&#x30E1;&#x30E2;&#x30EA;&#x306B;&#x4FDD;&#x5B58;</strong>&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x3053;&#x306E;<code>katekin</code>&#x3068;<code>brite</code>&#x306F;&#x305D;&#x308C;&#x305E;&#x308C;&#x3069;&#x3046;&#x3044;&#x3046;&#x5024;&#x3060;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x304B;&#xFF1F;&#x307E;&#x305F;&#x3001;&#x5F8C;&#x306B;&#x51FA;&#x3066;&#x304F;&#x308B;<code>x</code>&#x306F;&#x3069;&#x3046;&#x3044;&#x3046;&#x5024;&#x3060;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x304B;&#xFF1F;</p>
-<p>(&#x3053;&#x3093;&#x307A;&#x3044;&#x3068;&#x3046;&#x30B3;&#x30E1;&#x30F3;&#x30C8;: &#x5B9F;&#x884C;&#x3059;&#x308B;&#x524D;&#x306B;&#x8003;&#x3048;&#x3066;&#x3001;&#x5F53;&#x305F;&#x3063;&#x3066;&#x305F;&#x3089;&#x5B09;&#x3057;&#x3044;&#x6C17;&#x304C;&#x3059;&#x308B;&#x3002;)</p>
-<h2 id="&#x5909;&#x6570;">&#x5909;&#x6570;</h2>
-<p><code>katekin</code>&#x3084;<code>brite</code>&#x3001;<code>x</code>&#x306E;&#x3088;&#x3046;&#x306A;&#x540D;&#x672D;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x306E;&#x3053;&#x3068;&#x3092;<strong>&#x5909;&#x6570;</strong>&#x3068;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x307E;&#x305F;&#x3001;&#x540D;&#x672D;(&#x5909;&#x6570;)&#x306B;&#x5BFE;&#x3057;&#x3066;&#x5024;&#x3092;&#x5272;&#x308A;&#x5F53;&#x3066;&#x308B;&#x3053;&#x3068;&#x3092;&#x300C;&#x5909;&#x6570;&#x306B;&#x5024;&#x3092;<strong>&#x4EE3;&#x5165;&#x3059;&#x308B;</strong>&#x300D;&#x3068;&#x3044;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-<ul>
-<li>&#x5909;&#x6570;katekin&#x306B;7000 + 586&#x306E;&#x7D50;&#x679C;&#x3092;<strong>&#x4EE3;&#x5165;&#x3059;&#x308B;</strong><pre><code class="lang-ruby">katekin = <span class="hljs-number">7000</span> + <span class="hljs-number">586</span>
-</code></pre>
-</li>
-</ul>
-<p>(&#x3053;&#x3093;&#x307A;&#x3044;&#x3068;&#x3046;&#x30B3;&#x30E1;&#x30F3;&#x30C8;: &#x5909;&#x6570;&#x3078;&#x306E;&#x4EE3;&#x5165;(&#x30E1;&#x30E2;&#x30EA;&#x3078;&#x306E;&#x4FDD;&#x5B58;)&#x306F;&#x7D50;&#x69CB;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x306E;&#x809D;&#x306A;&#x3093;&#x3067;&#x3059;&#x3088;&#x306D;&#x3047;)</p>
+                                <h1 id="&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;">&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;</h1>
+<p>&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;&#x3092;&#x8907;&#x6570;&#x4EBA;&#x3067;&#x697D;&#x306B;&#x5B89;&#x5168;&#x306B;&#x884C;&#x3046;&#x305F;&#x3081;&#x3001;<strong>&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3084;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x306E;&#x5909;&#x66F4;&#x306E;&#x5C65;&#x6B74;</strong>&#x3092;&#x8A18;&#x9332;&#x3057;&#x305F;&#x308A;&#x3001;&#x8A18;&#x9332;&#x3057;&#x305F;&#x5C65;&#x6B74;&#x3092;&#x3082;&#x3068;&#x306B;<strong>&#x904E;&#x53BB;&#x306B;&#x3055;&#x304B;&#x306E;&#x307C;&#x308C;&#x308B;</strong>&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x30C4;&#x30FC;&#x30EB;&#x7FA4;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x305D;&#x3046;&#x3044;&#x3063;&#x305F;&#x30C4;&#x30FC;&#x30EB;&#x7FA4;&#x306F;&#x3001;<strong>&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;</strong>&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3068;&#x547C;&#x3070;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;">&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;</h2>
+<p>&#x300C;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x300D;&#x3068;&#x3044;&#x3046;&#x8A00;&#x8449;&#x81EA;&#x4F53;&#x306F;<code>1.2.0</code>&#x306A;&#x3069;&#x3001;&#x6570;&#x5B57;&#x4ED8;&#x304D;&#x3067;&#x3088;&#x304F;&#x898B;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;&#x306B;&#x304A;&#x3044;&#x3066;&#x306F;&#x6570;&#x5B57;&#x4EE5;&#x5916;&#x306B;&#x3082;&#x666E;&#x901A;&#x306E;&#x5358;&#x8A9E;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x5834;&#x5408;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;&#x306B;&#x304A;&#x3044;&#x3066;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306F;&#x3001;<strong>&#x533A;&#x5207;&#x308A;&#x306E;&#x826F;&#x3044;&#x3042;&#x308B;&#x6642;&#x70B9;</strong>&#x3092;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x518D;&#x73FE;">&#x518D;&#x73FE;</h2>
+<p>&#x307E;&#x305F;&#x3001;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x958B;&#x767A;&#x306B;&#x304A;&#x3044;&#x3066;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306F;&#x4ED8;&#x7B8B;&#x306E;&#x3088;&#x3046;&#x306A;&#x5F79;&#x5272;&#x3092;&#x3057;&#x3066;&#x3044;&#x3066;&#x3001;&#x3044;&#x3064;&#x3067;&#x3082;&#x3042;&#x308B;&#x6642;&#x70B9;&#x306E;&#x72B6;&#x614B;&#x3092;<strong>&#x518D;&#x73FE;&#x3067;&#x304D;&#x308B;</strong>&#x3053;&#x3068;&#x304C;&#x4E00;&#x822C;&#x7684;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x305F;&#x3068;&#x3048;&#x308B;&#x306A;&#x3089;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306F;&#x5B66;&#x6821;&#x306E;&#x5B66;&#x5E74;&#x3084;&#x5B66;&#x671F;&#x307F;&#x305F;&#x3044;&#x306A;&#x611F;&#x3058;&#x3067;&#x3001;&#x3044;&#x3064;&#x3067;&#x3082;&#x4E2D;&#x5B66;&#x751F;&#x3084;&#x9AD8;&#x6821;&#x751F;&#x306B;&#x623B;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3059;(&#x91CD;&#x8981;&#x5EA6;&#x304C;&#x4F1D;&#x308F;&#x308A;&#x307E;&#x3059;&#x304B;&#x306D;&#xFF1F;)&#x3002;</p>
+<h2 id="&#x30E1;&#x30EA;&#x30C3;&#x30C8;">&#x30E1;&#x30EA;&#x30C3;&#x30C8;</h2>
+<p>&#x533A;&#x5207;&#x308A;&#x3092;&#x6301;&#x305F;&#x305B;&#x3001;&#x518D;&#x73FE;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;&#x8907;&#x6570;&#x4EBA;&#x3067;&#x306E;&#x958B;&#x767A;&#x3067;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;<strong>&#x8DB3;&#x4E26;&#x307F;&#x3092;&#x63C3;&#x3048;&#x3066;</strong>&#x5171;&#x6709;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;(&#x5171;&#x6709;&#x306B;&#x306F;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x304C;&#x3001;&#x4ECA;&#x306E;&#x6642;&#x4EE3;&#x306F;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x7528;&#x610F;&#x305B;&#x305A;&#x3068;&#x3082;GitHub&#x304C;&#x4F7F;&#x3048;&#x307E;&#x3059;&#x3002;)</p>
+<hr>
+<p>&#x3088;&#x304F;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306B;&#x306F;<strong>Git</strong>&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x306F;Git&#x306B;&#x3064;&#x3044;&#x3066;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 
                                 
                                 </section>
@@ -562,12 +548,12 @@ puts x
 
             
                 
-                <a href="2-2.数の計算.html" class="navigation navigation-prev " aria-label="Previous page: 2-2.数の計算">
+                <a href="5.システム開発.html" class="navigation navigation-prev " aria-label="Previous page: 第5章.システム開発">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-4.数以外の値.html" class="navigation navigation-next " aria-label="Next page: 2-4.数以外の値(文字列、真偽値)">
+                <a href="5-1-1.Gitの紹介.html" class="navigation navigation-next " aria-label="Next page: 5-1-1.Gitの紹介">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -578,7 +564,7 @@ puts x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2-3.値の保存(変数)","level":"1.3.4","depth":2,"next":{"title":"2-4.数以外の値(文字列、真偽値)","level":"1.3.5","depth":2,"path":"2-4.数以外の値.md","ref":"2-4.数以外の値.md","articles":[]},"previous":{"title":"2-2.数の計算","level":"1.3.3","depth":2,"path":"2-2.数の計算.md","ref":"2-2.数の計算.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2-3.値の保存.md","mtime":"2021-05-17T04:04:40.048Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-24T06:46:41.855Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5-1.バージョン管理","level":"1.6.1","depth":2,"next":{"title":"5-1-1.Gitの紹介","level":"1.6.1.1","depth":3,"path":"5-1-1.Gitの紹介.md","ref":"5-1-1.Gitの紹介.md","articles":[]},"previous":{"title":"第5章.システム開発","level":"1.6","depth":1,"path":"5.システム開発.md","ref":"5.システム開発.md","articles":[{"title":"5-1.バージョン管理","level":"1.6.1","depth":2,"path":"5-1.バージョン管理.md","ref":"5-1.バージョン管理.md","articles":[{"title":"5-1-1.Gitの紹介","level":"1.6.1.1","depth":3,"path":"5-1-1.Gitの紹介.md","ref":"5-1-1.Gitの紹介.md","articles":[]},{"title":"5-1-2.コミット","level":"1.6.1.2","depth":3,"path":"5-1-2.コミット.md","ref":"5-1-2.コミット.md","articles":[]},{"title":"5-1-3.GitHubの紹介","level":"1.6.1.3","depth":3,"path":"5-1-3.GitHubの紹介.md","ref":"5-1-3.GitHubの紹介.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"5-1.バージョン管理.md","mtime":"2021-05-24T06:21:40.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-24T06:46:41.855Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
