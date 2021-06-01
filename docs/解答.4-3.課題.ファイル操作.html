@@ -288,6 +288,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.4" data-path="3-4.値の集まり.html">
+            
+                <a href="3-4.値の集まり.html">
+            
+                    
+                    3-4.値の集まり(配列、連想配列)
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -603,216 +616,6 @@ result = {
 
 classify_clips(<span class="hljs-string">&quot;1.Queue&quot;</span>, result)
 </code></pre>
-<h2 id="&#x554F;4">&#x554F;4</h2>
-<pre><code class="lang-ruby"><span class="hljs-comment"># &#x57FA;&#x6E96;</span>
-BORDER = <span class="hljs-number">5</span>
-
-<span class="hljs-comment"># &#x30E9;&#x30F3;&#x30AD;&#x30F3;&#x30B0;</span>
-RANKING = <span class="hljs-number">3</span>
-
-<span class="hljs-comment"># &#x96C6;&#x8A08;&#x7D50;&#x679C;</span>
-result = {
-  <span class="hljs-string">&quot;0.txt&quot;</span> =&gt; <span class="hljs-number">0</span>,
-  <span class="hljs-string">&quot;1.txt&quot;</span> =&gt; <span class="hljs-number">5</span>,
-  <span class="hljs-string">&quot;2.txt&quot;</span> =&gt; <span class="hljs-number">5</span>,
-  <span class="hljs-string">&quot;3.txt&quot;</span> =&gt; <span class="hljs-number">6</span>,
-  <span class="hljs-string">&quot;4.txt&quot;</span> =&gt; <span class="hljs-number">7</span>,
-  <span class="hljs-string">&quot;5.txt&quot;</span> =&gt; <span class="hljs-number">5</span>,
-  <span class="hljs-string">&quot;6.txt&quot;</span> =&gt; <span class="hljs-number">1</span>
-}
-
-<span class="hljs-comment"># &#x554F;2&#x306E;&#x3084;&#x3064;</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ranked_dir</span><span class="hljs-params">(date)</span></span>
-  <span class="hljs-comment"># &#x4EFB;&#x610F;&#x306E;&#x65E5;&#x4ED8;(Date&#x578B;)&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;(Ranked.yyyy-MM-dd)&#x3092;&#x4F5C;&#x6210;</span>
-  date_str = date.strftime(<span class="hljs-string">&quot;%Y-%m-%d&quot;</span>)
-  <span class="hljs-string">&quot;Ranked.<span class="hljs-subst">#{date}</span>&quot;</span>
-<span class="hljs-keyword">end</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clip</span></span>
-  <span class="hljs-keyword">attr_reader</span> <span class="hljs-symbol">:file</span>, <span class="hljs-symbol">:like</span>
-
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span><span class="hljs-params">(file, like)</span></span>
-    @file = file
-    @like = like
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span><span class="hljs-params">(dest)</span></span>
-    FileUtils.move(@file, dest)
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">clips</span><span class="hljs-params">(src, result)</span></span>
-    Dir.each_child(src).map { |file| Clip.new(<span class="hljs-string">&quot;<span class="hljs-subst">#{src}</span>/<span class="hljs-subst">#{file}</span>&quot;</span>, result[file]) }
-  <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span>
-
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">classify_clips</span><span class="hljs-params">(src, result)</span></span>
-  sorted_clips = Clip.clips(src, result).sort_by { |clip| [-clip.like, clip.file] }
-
-  <span class="hljs-comment"># &#x4ECA;&#x65E5;&#x306E;&#x30E9;&#x30F3;&#x30AD;&#x30F3;&#x30B0;&#x30D5;&#x30A9;&#x30EB;&#x30C0;</span>
-  today_dir = ranked_dir(Date.today)
-  <span class="hljs-keyword">unless</span> Dir.exist?(today_dir)
-    FileUtils.mkdir(today_dir)
-  <span class="hljs-keyword">end</span>
-
-  sorted_clips.each_with_index <span class="hljs-keyword">do</span> |clip, i|
-    <span class="hljs-keyword">if</span> i &lt; RANKING
-      clip.move(today_dir)
-    <span class="hljs-keyword">elsif</span> clip.like &gt;= BORDER
-      clip.move(<span class="hljs-string">&quot;2.Revenging&quot;</span>)
-    <span class="hljs-keyword">else</span>
-      clip.move(<span class="hljs-string">&quot;3.Unranked&quot;</span>)
-    <span class="hljs-keyword">end</span>
-  <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span>
-
-classify_clips(<span class="hljs-string">&quot;1.Queue&quot;</span>, result)
-</code></pre>
-<p>&#x554F;3(&#x30AF;&#x30E9;&#x30B9;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;)&#x3068;&#x306E;&#x5DEE;&#x5206;</p>
-<pre><code class="lang-diff"><span class="hljs-addition">+# &#x30E9;&#x30F3;&#x30AD;&#x30F3;&#x30B0;</span>
-<span class="hljs-addition">+RANKING = 3</span>
-
-<span class="hljs-addition">+def ranked_dir(date)</span>
-<span class="hljs-addition">+  # &#x4EFB;&#x610F;&#x306E;&#x65E5;&#x4ED8;(Date&#x578B;)&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;(Ranked.yyyy-MM-dd)&#x3092;&#x4F5C;&#x6210;</span>
-<span class="hljs-addition">+  date_str = date.strftime(&quot;%Y-%m-%d&quot;)</span>
-<span class="hljs-addition">+  &quot;Ranked.#{date}&quot;</span>
-<span class="hljs-addition">+end</span>
-
-(&#x7701;&#x7565;)
-
-def classify_clips(src, result)
-<span class="hljs-addition">+  sorted_clips = Clip.clips(src, result).sort_by { |clip| [-clip.like, clip.file] }</span>
-
-<span class="hljs-addition">+  # &#x4ECA;&#x65E5;&#x306E;&#x30E9;&#x30F3;&#x30AD;&#x30F3;&#x30B0;&#x30D5;&#x30A9;&#x30EB;&#x30C0;</span>
-<span class="hljs-addition">+  today_dir = ranked_dir(Date.today)</span>
-<span class="hljs-addition">+  unless Dir.exist?(today_dir)</span>
-<span class="hljs-addition">+    FileUtils.mkdir(today_dir)</span>
-<span class="hljs-addition">+  end</span>
-
-<span class="hljs-deletion">-  Clip.clips(src, result).each do |clip|</span>
-<span class="hljs-addition">+  sorted_clips.each_with_index do |clip, i|</span>
-<span class="hljs-addition">+    if i &lt; RANKING</span>
-<span class="hljs-addition">+      clip.move(today_dir)</span>
-<span class="hljs-deletion">-    if clip.like &gt;= BORDER</span>
-<span class="hljs-addition">+    elsif clip.like &gt;= BORDER</span>
-      clip.move(&quot;2.Revenging&quot;)
-    else
-      clip.move(&quot;3.Unranked&quot;)
-    end
-  end
-end
-
-(&#x7701;&#x7565;)
-</code></pre>
-<h2 id="&#x554F;5">&#x554F;5</h2>
-<pre><code class="lang-ruby"><span class="hljs-comment"># &#x57FA;&#x6E96;</span>
-BORDER = <span class="hljs-number">5</span>
-
-<span class="hljs-comment"># &#x30E9;&#x30F3;&#x30AD;&#x30F3;&#x30B0;</span>
-RANKING = <span class="hljs-number">3</span>
-
-<span class="hljs-comment"># &#x96C6;&#x8A08;&#x7D50;&#x679C;</span>
-result = {
-  <span class="hljs-string">&quot;0.txt&quot;</span> =&gt; <span class="hljs-number">0</span>,
-  <span class="hljs-string">&quot;1.txt&quot;</span> =&gt; <span class="hljs-number">5</span>,
-  <span class="hljs-string">&quot;2.txt&quot;</span> =&gt; <span class="hljs-number">5</span>,
-  <span class="hljs-string">&quot;3.txt&quot;</span> =&gt; <span class="hljs-number">6</span>,
-  <span class="hljs-string">&quot;4.txt&quot;</span> =&gt; <span class="hljs-number">7</span>,
-  <span class="hljs-string">&quot;5.txt&quot;</span> =&gt; <span class="hljs-number">5</span>,
-  <span class="hljs-string">&quot;6.txt&quot;</span> =&gt; <span class="hljs-number">1</span>
-}
-
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ranked_dir</span><span class="hljs-params">(date)</span></span>
-  <span class="hljs-comment"># &#x4EFB;&#x610F;&#x306E;&#x65E5;&#x4ED8;(Date&#x578B;)&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;(Ranked.yyyy-MM-dd)&#x3092;&#x4F5C;&#x6210;</span>
-  date_str = date.strftime(<span class="hljs-string">&quot;%Y-%m-%d&quot;</span>)
-  <span class="hljs-string">&quot;Ranked.<span class="hljs-subst">#{date}</span>&quot;</span>
-<span class="hljs-keyword">end</span>
-
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clip</span></span>
-  <span class="hljs-keyword">attr_reader</span> <span class="hljs-symbol">:file</span>, <span class="hljs-symbol">:like</span>
-
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span><span class="hljs-params">(dir, file, like)</span></span>
-    @dir = dir
-    @file = file
-    @like = like
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">move</span><span class="hljs-params">(dest)</span></span>
-    <span class="hljs-keyword">if</span> @dir == dest
-      <span class="hljs-keyword">return</span>
-    <span class="hljs-keyword">end</span>
-    FileUtils.move(<span class="hljs-string">&quot;<span class="hljs-subst">#{@dir}</span>/<span class="hljs-subst">#{@file}</span>&quot;</span>, dest)
-  <span class="hljs-keyword">end</span>
-
-  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">self</span>.<span class="hljs-title">clips</span><span class="hljs-params">(src, result)</span></span>
-    Dir.each_child(src).map { |file| Clip.new(src, file, result[file]) }
-  <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span>
-
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">classify_clips</span><span class="hljs-params">(srcs, result)</span></span>
-  sorted_clips = srcs
-    .map { |src| Clip.clips(src, result) }
-    .flatten
-    .sort_by { |clip| [-clip.like, clip.file] }
-
-  <span class="hljs-comment"># &#x4ECA;&#x65E5;&#x306E;&#x30E9;&#x30F3;&#x30AD;&#x30F3;&#x30B0;&#x30D5;&#x30A9;&#x30EB;&#x30C0;</span>
-  today_dir = ranked_dir(Date.today)
-  <span class="hljs-keyword">unless</span> Dir.exist?(today_dir)
-    FileUtils.mkdir(today_dir)
-  <span class="hljs-keyword">end</span>
-
-  sorted_clips.each_with_index <span class="hljs-keyword">do</span> |clip, i|
-    <span class="hljs-keyword">if</span> i &lt; RANKING
-      clip.move(today_dir)
-    <span class="hljs-keyword">elsif</span> clip.like &gt;= BORDER
-      clip.move(<span class="hljs-string">&quot;2.Revenging&quot;</span>)
-    <span class="hljs-keyword">else</span>
-      clip.move(<span class="hljs-string">&quot;3.Unranked&quot;</span>)
-    <span class="hljs-keyword">end</span>
-  <span class="hljs-keyword">end</span>
-<span class="hljs-keyword">end</span>
-
-classify_clips([<span class="hljs-string">&quot;1.Queue&quot;</span>, <span class="hljs-string">&quot;2.Revenging&quot;</span>], result)
-</code></pre>
-<p>&#x554F;4&#x3068;&#x306E;&#x5DEE;&#x5206;</p>
-<pre><code class="lang-diff">(&#x7701;&#x7565;)
-
-class Clip
-  attr_reader :file, :like
-<span class="hljs-deletion">-  def initialize(file, like)</span>
-<span class="hljs-addition">+  def initialize(dir, file, like)</span>
-<span class="hljs-addition">+    @dir = dir</span>
-    @file = file
-    @like = like
-  end
-
-  def move(dest)
-<span class="hljs-addition">+    if @dir == dest</span>
-<span class="hljs-addition">+      return</span>
-<span class="hljs-addition">+    end</span>
-<span class="hljs-deletion">-    FileUtils.move(@file, dest)</span>
-<span class="hljs-addition">+    FileUtils.move(&quot;#{@dir}/#{@file}&quot;, dest)</span>
-  end
-
-  def self.clips(src, result)
-<span class="hljs-deletion">-    Dir.each_child(src).map { |file| Clip.new(&quot;#{src}/#{file}&quot;, result[file]) }</span>
-<span class="hljs-addition">+    Dir.each_child(src).map { |file| Clip.new(src, file, result[file]) }</span>
-  end
-end
-
-<span class="hljs-deletion">-def classify_clips(src, result)</span>
-<span class="hljs-addition">+def classify_clips(srcs, result)</span>
-<span class="hljs-deletion">-  sorted_clips = Clip.clips(src, result).sort_by { |clip| [-clip.like, clip.file] }</span>
-<span class="hljs-addition">+  sorted_clips = srcs</span>
-<span class="hljs-addition">+    .map { |src| Clip.clips(src, result) }</span>
-<span class="hljs-addition">+    .flatten</span>
-<span class="hljs-addition">+    .sort_by { |clip| [-clip.like, clip.file] }</span>
-
-  (&#x7701;&#x7565;)
-end
-
-<span class="hljs-deletion">-classify_clips(&quot;1.Queue&quot;, result)</span>
-<span class="hljs-addition">+classify_clips([&quot;1.Queue&quot;, &quot;2.Revenging&quot;], result)</span>
-</code></pre>
 <hr>
 <p>&#x4E0A;&#x8A18;&#x3092;&#x6539;&#x5584;&#x3057;&#x305F;&#x30BD;&#x30FC;&#x30B9;</p>
 <p><a href="https://github.com/R3Dx-creative/clip-ranking/tree/main/playground/clip" target="_blank">https://github.com/R3Dx-creative/clip-ranking/tree/main/playground/clip</a></p>
@@ -855,7 +658,7 @@ end
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"解答.4-3.課題.ファイル操作","level":"1.7.1","depth":2,"previous":{"title":"解答","level":"1.7","depth":1,"path":"解答.md","ref":"解答.md","articles":[{"title":"解答.4-3.課題.ファイル操作","level":"1.7.1","depth":2,"path":"解答.4-3.課題.ファイル操作.md","ref":"解答.4-3.課題.ファイル操作.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"解答.4-3.課題.ファイル操作.md","mtime":"2021-05-20T05:27:49.271Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-26T06:46:25.323Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"解答.4-3.課題.ファイル操作","level":"1.7.1","depth":2,"previous":{"title":"解答","level":"1.7","depth":1,"path":"解答.md","ref":"解答.md","articles":[{"title":"解答.4-3.課題.ファイル操作","level":"1.7.1","depth":2,"path":"解答.4-3.課題.ファイル操作.md","ref":"解答.4-3.課題.ファイル操作.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"解答.4-3.課題.ファイル操作.md","mtime":"2021-06-01T06:10:21.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-01T06:18:47.696Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
